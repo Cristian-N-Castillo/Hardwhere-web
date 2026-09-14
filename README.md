@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sitio web HardWhere
 
-## Getting Started
+Next.js 16 (App Router, Turbopack) · React 19 · Tailwind CSS 4 · MDX · Server Actions.
 
-First, run the development server:
+## Desarrollo
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # completar variables
+npm run dev                  # http://localhost:3000
+npm run build && npm start   # producción
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dónde se edita el contenido
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Qué | Archivo |
+| --- | --- |
+| Datos de la empresa (teléfono, dirección, comuna) | `src/content/site.ts` |
+| Servicios | `src/content/services.ts` |
+| Socios (fotos en `public/equipo/`) | `src/content/team.ts` |
+| Casos | `src/content/cases.ts` |
+| Checklist Ley 21.719 | `src/content/checklist.ts` |
+| Precios PyMEs | `src/app/pymes/page.tsx` |
+| Artículos del blog | `src/content/blog/*.mdx` + registrar el slug en `src/lib/blog.ts` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Los datos pendientes se muestran con un recuadro amarillo punteado ("por confirmar") hasta que se completen.
 
-## Learn More
+## Formularios
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Los formularios de contacto y checklist envían cada registro (con fecha de consentimiento y versión de la
+política) al webhook definido en `LEADS_WEBHOOK_URL`. En producción es obligatorio; en desarrollo, si falta,
+los envíos se imprimen en la consola.

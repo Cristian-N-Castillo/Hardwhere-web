@@ -1,0 +1,62 @@
+export const metadata = {
+  title: "Logs, accesos e incidentes: la evidencia técnica que pedirá un fiscalizador",
+  description:
+    "Una política de privacidad no responde las preguntas de una fiscalización. Estas son las preguntas concretas y la evidencia técnica que las responde.",
+  date: "2026-09-12",
+  readingMinutes: 7,
+  tags: ["Ley 21.719", "Ciberseguridad"],
+};
+
+Imagina que llega un reclamo a la Agencia de Protección de Datos Personales: una persona asegura que alguien de tu organización revisó sus datos sin motivo. La Agencia pide antecedentes. ¿Qué entregas?
+
+Si la respuesta es "nuestra política de privacidad", el problema es evidente. La política dice lo que *prometes* hacer. La pregunta es qué *pasó*.
+
+## Las preguntas que importan
+
+Una fiscalización se traduce en preguntas concretas. Estas son las más probables, y la evidencia que las responde:
+
+| Pregunta | Evidencia |
+| --- | --- |
+| ¿Quién accedió a los datos de esta persona, y cuándo? | Registro de accesos por usuario, con fecha, hora y acción |
+| ¿Quién tiene acceso hoy, y por qué? | Matriz de roles y revisiones periódicas documentadas |
+| ¿Cómo respondieron la solicitud de este titular? | Registro de la solicitud, la respuesta y el plazo |
+| ¿Qué pasó en el incidente, y cuándo lo reportaron? | Bitácora con línea de tiempo y evaluación de riesgo |
+| ¿Cómo saben que los respaldos funcionan? | Registro de pruebas de restauración |
+
+## Registros de acceso: la base de todo
+
+Un buen registro de auditoría responde cinco preguntas: **quién** (usuario identificado, no una cuenta compartida), **qué** (qué registro o conjunto de datos), **qué acción** (ver, modificar, exportar, eliminar), **cuándo** (fecha y hora sincronizadas) y **desde dónde**.
+
+Tres errores frecuentes:
+
+- **Cuentas compartidas.** Si cinco personas usan el mismo usuario "secretaria", el registro no sirve para nada.
+- **Registros que se pueden borrar.** Si el mismo administrador que accede a los datos puede borrar los logs, la evidencia pierde valor. Los registros deben estar protegidos contra alteración.
+- **Sin retención definida.** Guardar registros por siete días no sirve si el reclamo llega en tres meses.
+
+## Accesos: menos es más seguro
+
+El principio es simple: cada persona accede solo a lo que necesita para su trabajo. En la práctica, eso significa permisos por rol, autenticación multifactor en cuentas con acceso a datos, y una revisión periódica —trimestral es razonable— donde alguien firma que los accesos siguen siendo correctos.
+
+La prueba más reveladora: ¿cuántas cuentas activas pertenecen a personas que ya no trabajan en la organización?
+
+## Incidentes: prepararse antes
+
+La ley exige reportar a la Agencia las vulneraciones de seguridad que generen riesgo para las personas, sin dilaciones indebidas. No fija un número de horas, pero recomendamos diseñar el procedimiento con una meta de **72 horas**, el estándar de referencia internacional.
+
+Llegar a tiempo es imposible si el procedimiento se inventa durante el incidente. Necesitas:
+
+1. Roles definidos: quién coordina, quién evalúa, quién comunica.
+2. Criterios para evaluar el riesgo.
+3. Plantillas de reporte listas.
+4. Una bitácora que registre cada decisión con su hora.
+5. Un simulacro, al menos una vez al año.
+
+Y, sobre todo, **registros de acceso**: sin ellos no puedes saber qué datos se vieron comprometidos, y sin eso no puedes evaluar el riesgo.
+
+## Por dónde empezar
+
+Si solo pudieras hacer una cosa este mes, que sea esta: elige tu sistema con más datos personales y verifica si puedes responder la primera pregunta de la tabla. Si no puedes, ya sabes cuál es tu prioridad.
+
+Revisa la [guía práctica de la Ley 21.719](/cumplimiento-ley-21719) o [conversemos](/contacto) sobre tu caso.
+
+*Este artículo es informativo y no constituye asesoría legal.*
