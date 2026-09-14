@@ -11,6 +11,12 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  experimental: {
+    // Hosting compartido (cPanel/LVE) limita procesos por cuenta: usar hilos en vez de
+    // procesos hijos para la compilación evita errores "spawn EAGAIN" al hacer `next build`.
+    cpus: 1,
+    workerThreads: true,
+  },
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
